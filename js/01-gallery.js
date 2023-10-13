@@ -25,6 +25,9 @@ function createMarkup(arr) {
 function handlerGalleryClick(evt) { 
 
       evt.preventDefault();
+      if (evt.target.nodeName!== "IMG"){
+        return
+    }
 
     const currentGallery=evt.target.closest('.gallery__image');
 
@@ -45,5 +48,3 @@ container.insertAdjacentHTML('beforeend', createMarkup(galleryItems))
 
 
 container.addEventListener('click', handlerGalleryClick)
-
-window.onclose = handlerGalleryClick

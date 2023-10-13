@@ -5,8 +5,6 @@ console.log(galleryItems);
 
 const container = document.querySelector(".js-lightbox")
 container.insertAdjacentHTML('beforeend', createMarkup(galleryItems))
-container.addEventListener('click', handlerGalleryClick)
-
 
 // console.log(container);
 
@@ -24,16 +22,7 @@ function createMarkup(arr) {
 
 // 12
 
-  function handlerGalleryClick(evt) { 
-        evt.preventDefault();
-
-        if (evt.target.nodeName!== "IMG"){
-            return
-        }
-   
-      var lightbox = new SimpleLightbox('.gallery a', {
-         captionsData:"alt",
-         captionDelay: 250
-    });
-   
-}
+var lightbox = new SimpleLightbox('.gallery a', {
+  captionsData:"alt",
+  captionDelay: 250
+});
